@@ -1,0 +1,117 @@
+
+/*Blog Page
+------------------------------------*/
+.blog-page ul,
+.blog-page li {
+	margin:0 !important;
+	padding:0 !important;
+}
+.blog h3 {
+	color:#72c02c;
+}
+.blog ul {
+	color:#555;
+	font-size:12px;
+}
+.blog li {
+	margin-right:7px !important;
+}
+.blog li i {
+	color:#666;
+}
+.blog li a:hover {
+	color:#72c02c;
+	text-decoration:none;
+}
+.blog ul.blog-info {
+	border-top:solid 1px #eee;
+}
+.blog .blog-img { 
+	margin:10px 0;
+}
+
+/*Blog Tags*/
+ul.blog-tags a {
+	font-size:13px;
+	padding:2px 5px;
+	background:#f7f7f7;
+	margin:0 2px 5px 0;
+	display:inline-block;
+	text-shadow:0 1px 0 #fff;
+}
+ul.blog-tags a:hover,
+ul.blog-tags a:hover i {
+	color:#72c02c;
+	text-decoration:none;
+	-webkit-transition:all 0.3s ease-in-out;
+	-moz-transition:all 0.3s ease-in-out;
+	-o-transition:all 0.3s ease-in-out;
+	transition:all 0.3s ease-in-out;
+}
+ul.blog-tags a i {
+	color:#777;
+}
+.blog ul.blog-tags {
+	border-bottom:solid 1px #eee;
+	padding-bottom:4px !important;
+}
+.blog ul.blog-tags a {
+	font-size:10px;
+	display:inline;
+	padding:2px 3px;
+	margin-right:2px;
+	background:#f4f4f4;
+}
+
+/*Blog Ads*/
+.blog-ads li {
+	display:inline;
+}
+.blog-ads li img {
+	opacity:0.6;
+	width:60px;
+	height:60px;
+	margin:0 2px 8px;
+}
+.blog-ads li img:hover {
+	opacity:1;
+	box-shadow:0 0 0 4px #72c02c;
+}
+
+/*Blog Latest Tweets*/
+.blog-twitter p {
+}
+.blog-twitter p span {
+	color:#777;
+	display:block;
+	font-size:11px; 
+}
+.blog-twitter p a {
+	color:#72c02c;
+	text-decoration:none;
+}
+.blog-twitter p a:hover {
+	text-decoration:underline;
+}
+
+/*Blog Item Page
+------------------------------------*/
+.blog-item .media img {
+	top:3px;
+	width:54px;
+	height:54px;
+	position:relative;
+}
+.blog-item h4.media-heading {
+	position:relative;
+}
+.blog-item h4.media-heading span {
+	top:3px; 
+	right:0;
+	color:#777;
+	font-size:12px;
+	position:absolute;
+}
+.blog-item h4.media-heading span a {
+	color:#72c02c;
+}

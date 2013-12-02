@@ -1,0 +1,50 @@
+<div class="widget-box transparent">
+	<div class="widget-header">
+		<h6 class="purple">
+			<i class="icon-question"></i> 可能需要您解答的问题
+		</h6>
+	</div><!--/.page-header-->
+
+	<div class="row">
+		<div class="col-xs-12">
+			<!--PAGE CONTENT BEGINS-->
+
+			<div class="space-6"></div>
+
+			@for(i <- 0 to 10){
+			<div class="row profile-activity">
+				<div class="col-sm-3 clearfix">
+					<div class="center">
+						<div class="grid3">
+							<a href="#" class="no-link"><span class="bigger-130 blue">25</span><br>浏览</a>
+						</div>
+						<div class="grid3">
+							<a href="#"><span class="bigger-130 blue">12</span><br>回答</a>
+						</div>
+						<div class="grid3">
+							<a href="#"><span class="bigger-130 blue">12</span><br>投票</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-9 clearfix">
+					<a href="#">ITM能够正常监控，但是性能数据不能入库</a>
+					<div class="time">
+						<div class="pull-left">
+							<button class="btn btn-minier btn-purple">ITM</button>
+							<button class="btn btn-minier btn-info">Tivoli</button>
+							<button class="btn btn-minier btn-danger">Linux</button>
+						</div>
+						<div class="pull-right">
+							<i class="icon-time bigger-110"></i>
+							2 hours ago &nbsp;&nbsp;
+							<i class="icon-user bigger-110"></i>
+							<a href="#">Humin</a>
+						</div>
+					</div>
+				</div>
+			</div><!--/row-->
+			}
+			<!--PAGE CONTENT ENDS-->
+		</div><!--/.span-->
+	</div><!--/.row-fluid-->
+</div><!--/.page-content-->

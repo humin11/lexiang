@@ -1,0 +1,177 @@
+@(title: String, nav: String = "")(content: Html)
+
+@import widgets._
+
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>@title | 乐享一二，乐享IT</title>
+
+		<meta name="description" content="overview &amp; stats" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<!--basic styles-->
+
+		<link href="@routes.Assets.at("stylesheets/bootstrap.min.css")" rel="stylesheet" />
+		<!-- <link href="@routes.Assets.at("stylesheets/bootstrap-responsive.min.css")" rel="stylesheet" /> -->
+		<link rel="stylesheet" href="@routes.Assets.at("stylesheets/font-awesome.min.css")" />
+
+		<!--[if IE 7]>
+		  <link rel="stylesheet" href="@routes.Assets.at("stylesheets/font-awesome-ie7.min.css")" />
+		<![endif]-->
+
+		<!--page specific plugin styles-->
+		<link rel="stylesheet" href="@routes.Assets.at("stylesheets/jquery-ui-1.10.3.custom.min.css")" />
+		<link rel="stylesheet" href="@routes.Assets.at("stylesheets/jquery.gritter.css")" />
+		<link rel="stylesheet" href="@routes.Assets.at("stylesheets/select2.css")" />
+		<link rel="stylesheet" href="@routes.Assets.at("stylesheets/bootstrap-editable.css")" />
+		<!--fonts-->
+
+		<link rel="stylesheet" href="@routes.Assets.at("stylesheets/ace-fonts.css")" />
+
+		<!--ace styles-->
+
+		<link rel="stylesheet" href="@routes.Assets.at("stylesheets/ace.min.css")" />
+		<link rel="stylesheet" href="@routes.Assets.at("stylesheets/ace-skins.min.css")" />
+
+		<!--[if lte IE 8]>
+		  <link rel="stylesheet" href="@routes.Assets.at("stylesheets/ace-ie.min.css")" />
+		<![endif]-->
+			
+		<script src="@routes.Assets.at("javascripts/ace-extra.min.js")"></script>
+
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+
+		<!--[if lt IE 9]>
+			<script src="@routes.Assets.at("javascripts/html5shiv.js")"></script>
+			<script src="@routes.Assets.at("javascripts/respond.min.js")"></script>
+		<![endif]-->
+		
+
+		<!--inline styles related to this page-->
+		<link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
+		
+		<link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
+		
+
+		
+	
+		<!--[if !IE]>-->
+		<script type="text/javascript">
+			window.jQuery || document.write("<script src='@routes.Assets.at("javascripts/jquery-2.0.3.min.js")'>"+"<"+"/script>");
+		</script>
+		<!--<![endif]-->
+
+		<!--[if IE]>
+		<script type="text/javascript">
+			window.jQuery || document.write("<script src='@routes.Assets.at("javascripts/jquery-1.10.2.min.js")'>"+"<"+"/script>");
+		</script>
+		<![endif]-->
+
+		<script type="text/javascript">
+			if("ontouchend" in document) document.write("<script src='@routes.Assets.at("javascripts/jquery.mobile.custom.min.js")'>"+"<"+"/script>");
+		</script>
+		<script src="@routes.Assets.at("javascripts/bootstrap.min.js")"></script>
+		<script src="@routes.Application.jsRoutes" defer="defer"></script>
+
+		<!--page specific plugin scripts-->
+
+		<!--[if lte IE 8]>
+		  <script src="@routes.Assets.at("javascripts/excanvas.min.js")"></script>
+		<![endif]-->
+
+		<script src="@routes.Assets.at("javascripts/jquery-ui-1.10.3.custom.min.js")"></script>
+		<script src="@routes.Assets.at("javascripts/jquery.ui.touch-punch.min.js")"></script>
+		<script src="@routes.Assets.at("javascripts/jquery.slimscroll.min.js")"></script>
+		<script src="@routes.Assets.at("javascripts/jquery.gritter.min.js")"></script>
+		<script src="@routes.Assets.at("javascripts/bootbox.min.js")"></script>
+
+		
+	</head>
+
+	<body style>
+		
+		@navbar()
+
+		<div class="space-6"></div>
+		<div class="main-container">
+			
+			<div class="row" id="searchbar">
+				<div class="col-md-2 col-md-offset-1 pull-left">
+					<a href="#" class="brand">
+						<small>
+							<img src="@routes.Assets.at("images/logo.png")" class="msg-photo" alt="ITClouder" style="max-width:150px"/>
+						</small>
+					</a><!--/.brand-->
+				
+				</div>
+				
+				<div class="col-md-9 pull-left" id="nav-search">
+					<form class="form-search">
+						<span class="input-icon col-md-8">
+							<input type="text" placeholder="Search ..." class="form-control" id="nav-search-input" autocomplete="off">
+							<i class="icon-search nav-search-icon"></i>
+						</span>
+					</form>
+				</div><!--#nav-search-->
+				
+			</div>
+		</div>
+		
+		<hr />
+		
+		<div class="main-container">
+
+			<div class="row">
+				@content
+			</div> <!--/.sidebar -->
+		</div><!--/.main-container-->
+		
+		<hr >
+		<footer class="footer">
+			<div class="container-fluid">
+				<div class="center">
+					<p>2013 © CloudWei. ALL Rights Reserved. <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+			 	</div>
+			</div>
+		</footer>
+
+		<a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-small btn-inverse">
+			<i class="icon-double-angle-up icon-only bigger-110"></i>
+		</a>
+
+		<!--basic scripts-->
+		
+		
+		<!--ace scripts-->
+
+		<script src="@routes.Assets.at("javascripts/ace-elements.min.js")"></script>
+		<script src="@routes.Assets.at("javascripts/ace.min.js")"></script>
+		<!--inline scripts related to this page-->
+
+		<script type="text/javascript">
+			$(function() {
+				function stripTrailingSlash(str) {
+				    if(str.substr(-1) == '/') {
+				      return str.substr(0, str.length - 1);
+				    }
+				    return str;
+				  }
+
+				  var url = window.location.pathname;  
+				  var activePage = stripTrailingSlash(url);
+
+				  $('.nav li a').each(function(){  
+				    var currentPage = stripTrailingSlash($(this).attr('href'));
+
+				    if (activePage == currentPage) {
+				      $(this).parent().addClass('active'); 
+				    } 
+				  });
+			
+			})
+		</script>
+	</body>
+</html>

@@ -1,0 +1,41 @@
+
+@import widgets._
+
+@main("CloudWei") {
+    
+	<div class="main-content2 col-sm-8 col-lg-8">
+		
+		@stream()
+
+	</div><!--/.main-content-->
+	
+	<div class="sidebar2 col-sm-4 col-lg-4">
+		<div class="space-6"></div>
+		<div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
+			<button class="btn btn-small btn-success">
+				<i class="icon-signal"></i>
+			</button>
+
+			<button class="btn btn-small btn-info">
+				<i class="icon-pencil"></i>
+			</button>
+
+			<button class="btn btn-small btn-warning">
+				<i class="icon-group"></i>
+			</button>
+
+			<button class="btn btn-small btn-danger">
+				<i class="icon-cogs"></i>
+			</button>
+		</div>
+		
+		@notice()	
+		
+		
+		@community_recommend()
+
+		@book()	
+		
+	</div>
+    
+}

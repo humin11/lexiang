@@ -1,0 +1,71 @@
+@(verificationUrl: String, token: String, name: String, email: String)
+<html>
+<body>
+
+<body style='background: #f4f7f9; font-family:Helvetica Neue, Helvetica, Arial;'>
+	<table align='center' bgcolor='#f4f7f9' border='0' cellpadding='0' cellspacing='0' id='backgroundTable' style='background: #f4f7f9;' width='100%'>
+		<tr>
+			<td align='center'>
+				<center>
+					<table border='0' cellpadding='50' cellspacing='0' style='margin-left: auto;margin-right: auto;width:600px;text-align:center;' width='600'>
+						<tr>
+							<td align='center' valign='top'>
+								<img height="75" src="@routes.Assets.at("images/logo.png")" style="outline:none; text-decoration:none;border:none,display:block;" width="100" />
+							</td>
+						</tr>
+					</table>
+				</center>
+			</td>
+		</tr>
+		<tr>
+			<td align='center'>
+				<center>
+					<table border='0' cellpadding='30' cellspacing='0' style='margin-left: auto;margin-right: auto;width:600px;text-align:center;' width='600'>
+						<tr>
+							<td align='left' style='background: #ffffff; border: 1px solid #dce1e5;' valign='top' width=''>
+								<table border='0' cellpadding='0' cellspacing='0' width='100%'>
+									<tr>
+										<td align='center' valign='top'>
+											<h2>欢迎您加入乐享社区，进行师道传授之旅。</h2>
+										</td>
+									</tr>
+									<tr>
+										<td align='center' valign='top'>
+											<h4 style='color: #00acec !important'>邮箱激活通知</h4>
+										</td>
+									</tr>
+									<tr>
+		                                <td align="center" style="border-top: 1px solid #dce1e5;border-bottom: 1px solid #dce1e5;" valign="top">
+		                                    <p style="margin: 1em 0;">
+		                                        <strong>用户名:</strong>
+		                                        @name
+		                                    </p>
+		                                    <p style="margin: 1em 0;">
+		                                        <strong>E-mail:</strong>
+		                                        <a href="mailto:@email" style="color: #000000 !important;">@email</a>
+		                                    </p>
+		                                </td>
+		                            </tr>
+									<tr>
+										<td align='center' bgcolor='#00acec' valign='top'>
+											<h3><a href="@verificationUrl" style="color: #ffffff !important">点此完成注册</a></h3>
+										</td>
+									</tr>
+									<tr>
+										<td align='center' valign='top'>
+											<p style='margin: 1em 0;'>
+												<br>
+												乐享社区是一个知识分享平台，希望您为初学者的成长贡献自己的一分力量。
+											</p>
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+					</table>
+				</center>
+			</td>
+		</tr>
+	</table>
+</body>
+</html>
