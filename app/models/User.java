@@ -62,6 +62,9 @@ public class User extends Model implements Subject {
 	@ManyToMany
 	public List<UserPermission> permissions;
 
+    @ManyToMany(mappedBy = "users")
+    public List<Communities> communities;
+
 	public static final Finder<Long, User> find = new Finder<Long, User>(
 			Long.class, User.class);
 

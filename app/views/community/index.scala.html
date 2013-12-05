@@ -1,47 +1,43 @@
-
+@(communityList:List[models.Communities])
 @import widgets._
-		
+
+@displayCommunity(community:models.Communities)={
+<li class="col-md-4">
+    <div class="search-blocks search-blocks-top-sea">
+        <div class="row">
+            <div class="col-md-4 search-img">
+                <img class="img-responsive" src="@{routes.Assets.at(community.logo)}" alt="">
+                <!-- <button class="btn btn-primary btn-mini"><i class="icon-plus"></i>加入</button> -->
+            </div>
+            <div class="col-md-8">
+                <h2><a href="#">@community.name</a></h2>
+                <p class="text-muted">1088位成员</p>
+                @for(tag <- community.tags){
+                    <span class="badge badge-warning">@tag.name</span>
+                }
+            </div>
+        </div>
+    </div>
+</li>
+}
+
 @main(Messages("community")) {
     <link rel="stylesheet" href="@routes.Assets.at("stylesheets/community.css")" />
 	
 	<div class="col-xs-3">
-		<ul class="list-group sidebar-nav-v1">
-                <li class="list-group-item"><a href="feature_grid.html">Grid Layout</a></li>
-                <li class="list-group-item active">
-                    <span class="badge badge-green">New</span>                    
-                    <a href="feature_boxes.html">Content Boxes</a>
-                </li>
-                <li class="list-group-item"><a href="feature_typography.html">Typography</a></li>
-                <li class="list-group-item">
-                    <span class="badge badge-red">New</span>                    
-                    <a href="feature_tagline_boxes.html">Tagline Boxes</a>
-                </li>
-                <li class="list-group-item"><a href="feature_buttons.html">Buttons</a></li>
-                <li class="list-group-item">
-                    <span class="badge">New</span>                                        
-                    <a href="feature_icons.html">Icons</a>
-                </li>
-                <li class="list-group-item"><a href="feature_thumbails.html">Thumbails</a></li>
-                <li class="list-group-item"><a href="feature_components.html">Components</a></li>
-                <li class="list-group-item">
-                    <span class="badge badge-blue">New</span>                    
-                    <a href="feature_accardion_and_tabs.html">Accardion and Tabs</a>
-                </li>
-                <li class="list-group-item"><a href="feature_navigations.html">Navigations</a></li>
-                <li class="list-group-item"><a href="feature_tables.html">Tables</a></li>
-                <li class="list-group-item"><a href="feature_forms.html">Forms</a></li>
-                <li class="list-group-item">
-                    <span class="badge badge-sea">New</span>                    
-                    <a href="feature_testimonials.html">Testimonials</a>
-                </li>
-            </ul>
+        <div class="list-group">
+            <a href="#" class="list-group-item active">@Messages("community.left.my")</a>
+            <a href="#" class="list-group-item">@Messages("community.left.created")</a>
+            <a href="#" class="list-group-item"><span class="badge pull-right">New</span>@Messages("community.left.hot")</a>
+            <a href="#" class="list-group-item">@Messages("community.left.recommended")</a>
+        </div>
 	</div>
 
 	<div class="col-xs-9">
 		<div class="widget-box transparent">
 			<div class="widget-header">
 				<h4 class="lighter">我加入的社区</h4>
-	
+
 				<div class="widget-toolbar no-border">
 					<a data-toggle="modal" href="#new-community" class="btn-new-mail">
 						<button class="btn btn-xs btn-primary no-border"><i class="icon-plus"></i>&nbsp;创建新社区</button>
@@ -51,118 +47,13 @@
 	
 			<div class="widget-body">
 				<div class="widget-main padding-6 no-padding-left no-padding-right">
-					<div class="row">
-						<div class="col-xs-4">
-			                <div class="search-blocks search-blocks-top-sea">
-			                    <div class="row">
-			                        <div class="col-md-4 search-img">
-			                            <img class="img-responsive" src="@{routes.Assets.at("images/gallery/ubuntu.jpg")}" alt="">
-			                            <ul class="list-unstyled">
-			                               <li><i class="icon-user"></i>1888位</li>
-			                            </ul>
-			                            <!-- <button class="btn btn-primary btn-mini"><i class="icon-plus"></i>加入</button> -->
-			                        </div>
-			                        <div class="col-md-8">
-			                            <h2><a href="#">IBM Tivoli社区社</a></h2>
-			                            <span class="label label-small label-pink">Larger</span>&nbsp;<span class="label label-small label-inverse">Larger</span>
-			                            <p class="muted"><i>Tivoli社区主要服务IBM Tivoli相关的产品，主要包括IBM TSM, IBM TPC等产品系列</i></p>
-			                          </div>
-			                    </div>                            
-			                </div>
-			            </div>
-						<div class="col-xs-4">
-			                <div class="search-blocks search-blocks-top-sea">
-			                    <div class="row">
-			                        <div class="col-md-4 search-img">
-			                            <img class="img-responsive" src="@{routes.Assets.at("images/gallery/web.jpg")}" alt="">
-			                            <ul class="list-unstyled">
-			                               <li><i class="icon-user"></i>胡敏</li>
-			                               <li><i class="icon-map-marker"></i> 北京</li>
-			                            </ul>
-			                        </div>
-			                        <div class="col-md-8">
-			                            <h2><a href="#">IBM Tivoli社区社区</a></h2>
-			                            <span class="label label-small label-pink">Larger</span>&nbsp;<span class="label label-small label-inverse">Larger</span>
-			                            <p>Tivoli社区主要服务IBM Tivoli相关的产品，主要包括IBM TSM, IBM TPC等产品系列</p>
-			                          </div>
-			                    </div>                            
-			                </div>
-			            </div>
-			            <div class="col-xs-4">
-			                <div class="search-blocks search-blocks-top-sea">
-			                    <div class="row">
-			                        <div class="col-md-4 search-img">
-			                            <img class="img-responsive" src="@{routes.Assets.at("images/gallery/nexus.jpg")}" alt="">
-			                            <ul class="list-unstyled">
-			                               <li><i class="icon-user"></i>胡敏</li>
-			                               <li><i class="icon-map-marker"></i> 北京</li>
-			                            </ul>
-			                        </div>
-			                        <div class="col-md-8">
-			                            <h2><a href="#">IBM Tivoli社区社区</a></h2>
-			                            <span class="label label-small label-pink">Larger</span>&nbsp;<span class="label label-small label-inverse">Larger</span>
-			                            <p>Tivoli社区主要服务IBM Tivoli相关的产品，主要包括IBM TSM, IBM TPC等产品系列</p>
-			                          </div>
-			                    </div>                            
-			                </div>
-			            </div>
-					</div>
-					<div class="row">
-						<div class="col-xs-4">
-			                <div class="search-blocks search-blocks-top-sea">
-			                    <div class="row">
-			                        <div class="col-md-4 search-img">
-			                            <img class="img-responsive" src="@{routes.Assets.at("images/gallery/ubuntu.jpg")}" alt="">
-			                            <ul class="list-unstyled">
-			                               <li><i class="icon-user"></i>1888位</li>
-			                            </ul>
-			                            <!-- <button class="btn btn-primary btn-mini"><i class="icon-plus"></i>加入</button> -->
-			                        </div>
-			                        <div class="col-md-8">
-			                            <h2><a href="#">IBM Tivoli社区社</a></h2>
-			                            <span class="label label-small label-pink">Larger</span>&nbsp;<span class="label label-small label-inverse">Larger</span>
-			                            <p class="muted"><i>Tivoli社区主要服务IBM Tivoli相关的产品，主要包括IBM TSM, IBM TPC等产品系列</i></p>
-			                          </div>
-			                    </div>                            
-			                </div>
-			            </div>
-						<div class="col-xs-4">
-			                <div class="search-blocks search-blocks-top-sea">
-			                    <div class="row">
-			                        <div class="col-md-4 search-img">
-			                            <img class="img-responsive" src="@{routes.Assets.at("images/gallery/web.jpg")}" alt="">
-			                            <ul class="list-unstyled">
-			                               <li><i class="icon-user"></i>胡敏</li>
-			                               <li><i class="icon-map-marker"></i> 北京</li>
-			                            </ul>
-			                        </div>
-			                        <div class="col-md-8">
-			                            <h2><a href="#">IBM Tivoli社区社区</a></h2>
-			                            <span class="label label-small label-pink">Larger</span>&nbsp;<span class="label label-small label-inverse">Larger</span>
-			                            <p>Tivoli社区主要服务IBM Tivoli相关的产品，主要包括IBM TSM, IBM TPC等产品系列</p>
-			                          </div>
-			                    </div>                            
-			                </div>
-			            </div>
-			            <div class="col-xs-4">
-			                <div class="search-blocks search-blocks-top-sea">
-			                    <div class="row">
-			                        <div class="col-md-4 search-img">
-			                            <img class="img-responsive" src="@{routes.Assets.at("images/gallery/nexus.jpg")}" alt="">
-			                            <ul class="list-unstyled">
-			                               <li><i class="icon-user"></i>胡敏</li>
-			                               <li><i class="icon-map-marker"></i> 北京</li>
-			                            </ul>
-			                        </div>
-			                        <div class="col-md-8">
-			                            <h2><a href="#">IBM Tivoli社区社区</a></h2>
-			                            <span class="label label-small label-pink">Larger</span>&nbsp;<span class="label label-small label-inverse">Larger</span>
-			                            <p>Tivoli社区主要服务IBM Tivoli相关的产品，主要包括IBM TSM, IBM TPC等产品系列</p>
-			                          </div>
-			                    </div>                            
-			                </div>
-			            </div>
-					</div>
+                    <div class="row">
+                        <ul class="list-unstyled">
+                            @for(community <- communityList){
+                              @displayCommunity(community)
+                            }
+                        </ul>
+                    </div>
 				</div>
 			</div>
 		</div>
@@ -226,11 +117,11 @@
 			</div>
 		</div>
 		<!-- End Modal List -->
-		
+
 		<div class="widget-box transparent">
 			<div class="widget-header">
 				<h4 class="lighter">热门社区</h4>
-	
+
 				<div class="widget-toolbar no-border">
 					<a href="#" data-action="settings"> <i class="icon-cog"></i>
 					</a> <a href="#" data-action="reload"> <i class="icon-refresh"></i>
@@ -239,7 +130,7 @@
 					</a>
 				</div>
 			</div>
-	
+
 			<div class="widget-body">
 				<div class="widget-main padding-6 no-padding-left no-padding-right">
 				</div>
@@ -248,6 +139,7 @@
 	</div>
 	<script src="@routes.Assets.at("javascripts/jquery.form.min.js")"></script>
 	<script src="@routes.Assets.at("javascripts/jquery.validate.min.js")"></script>
+    <script src="@routes.Assets.at("javascripts/bootstrap-tag.min.js")"></script>
 	<script src="@routes.Assets.at("javascripts/ace-elements.min.js")"></script>
 	<script type="text/javascript">
 	<!--
@@ -259,14 +151,15 @@
 			//	beforeSubmit : showRequest, // pre-submit callback 
 			//	success : showResponse
 			// post-submit callback 
-			beforeSubmit: validate
+			beforeSubmit: validate,
+            success: addCommunity,
 
 			// other available options: 
 			//url:       url         // override for form's 'action' attribute 
 			//type:      type        // 'get' or 'post', override for form's 'method' attribute 
 			//dataType:  null        // 'xml', 'script', or 'json' (expected server response type) 
-			//clearForm: true        // clear all form fields after successful submit 
-			//resetForm: true        // reset the form after successful submit 
+			clearForm: true,        // clear all form fields after successful submit
+			resetForm: true        // reset the form after successful submit
 
 			// $.ajax options can be used here too, for example: 
 			//timeout:   3000 
@@ -319,7 +212,28 @@
 			return validator.form();
 		}
 
-			// bind form using 'ajaxForm' 
+        function addCommunity(data, statusText, xhr, $form){
+            $("#new-community").modal('hide');
+            var obj = $.parseJSON(data);
+            alert(obj.name);
+        }
+
+        var tag_input = $('#tags');
+        if(! ( /msie\s*(8|7|6)/.test(navigator.userAgent.toLowerCase())) )
+        {
+            tag_input.tag(
+                    {
+                        placeholder:tag_input.attr('placeholder'),
+                        source: ace.variable_US_STATES//defined in ace.js >> ace.enable_search_ahead
+                    }
+            );
+        } else {
+            //display a textarea for old IE, because it doesn't support this plugin or another one I tried!
+            tag_input.after('<textarea id="'+tag_input.attr('id')+'"  class="autosize-transition form-control" name="'+tag_input.attr('name')+'" rows="3">'+tag_input.val()+'</textarea>').remove();
+        }
+
+
+    // bind form using 'ajaxForm'
 		$('#communityForm').ajaxForm(options);
 
 			$('#logo')

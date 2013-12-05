@@ -37,6 +37,12 @@ blog.num=博客数
 ask.num=问答数
 community.num=社区数
 
+# --- Community
+community.left.created=我创建的社区
+community.left.my=我加入的社区
+community.left.hot=热门社区
+community.left.recommended=推荐社区
+
 # --- Constraints
 constraint.required=必填项
 constraint.min=最小值: {0}

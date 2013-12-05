@@ -21,6 +21,7 @@ create table city (
 
 create table communities (
   id                        bigint auto_increment not null,
+  logo                      varchar(255),
   name                      varchar(255),
   bio                       varchar(255),
   user_id                   bigint,
@@ -59,6 +60,13 @@ create table security_role (
   constraint pk_security_role primary key (id))
 ;
 
+create table tags (
+  id                        bigint auto_increment not null,
+  name                      varchar(255),
+  type                      varchar(255),
+  constraint pk_tags primary key (id))
+;
+
 create table token_action (
   id                        bigint auto_increment not null,
   token                     varchar(255),
@@ -90,6 +98,12 @@ create table user_permission (
 ;
 
 
+create table communities_tags (
+  communities_id                 bigint not null,
+  tags_id                        bigint not null,
+  constraint pk_communities_tags primary key (communities_id, tags_id))
+;
+
 create table users_security_role (
   users_id                       bigint not null,
   security_role_id               bigint not null,
@@ -112,6 +126,10 @@ create index ix_token_action_targetUser_4 on token_action (target_user_id);
 
 
 
+alter table communities_tags add constraint fk_communities_tags_communities_01 foreign key (communities_id) references communities (id) on delete restrict on update restrict;
+
+alter table communities_tags add constraint fk_communities_tags_tags_02 foreign key (tags_id) references tags (id) on delete restrict on update restrict;
+
 alter table users_security_role add constraint fk_users_security_role_users_01 foreign key (users_id) references users (id) on delete restrict on update restrict;
 
 alter table users_security_role add constraint fk_users_security_role_security_role_02 foreign key (security_role_id) references security_role (id) on delete restrict on update restrict;
@@ -130,6 +148,8 @@ drop table city;
 
 drop table communities;
 
+drop table communities_tags;
+
 drop table linked_account;
 
 drop table profiles;
@@ -137,6 +157,8 @@ drop table profiles;
 drop table province;
 
 drop table security_role;
+
+drop table tags;
 
 drop table token_action;
 
